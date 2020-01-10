@@ -3,11 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="components/loader.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">  
+    <script src="components/loader.js"></script>      
+    <script src="keys.js"></script>
     <link rel="stylesheet" href="components/loader.css">
+
     
     <script>
+      // NCMB アクセスの準備
+    var ncmb = new NCMB(appKey, clientKey);
+    // 利用するデータベースを指定（存在しなければ生成）
+    var TestClass = ncmb.DataStore("TestClass3");
         function omikuji (){
             var dice = Math.floor(Math.random() * 5);
             var image_name;
@@ -28,6 +34,8 @@
             document.getElementById("kekka").style["display"] = "inline";
             document.getElementById("button").src = "images/omikuji-btn-yarinaosu.png";
         }
+      
+
     </script>
     <style>
         body {
